@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   html.window.location.reload();
                 },
-                child: Text('CANVAS'),
+                child: Text('SKIA'),
               ),
             ],
           ),
