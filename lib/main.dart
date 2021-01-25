@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_web_libraries_in_flutter
 import 'dart:js';
-import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:universal_html/html.dart';
 
 String currentRenderer;
 bool detectFlutterCanvasKit;
@@ -71,9 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   prefs.setString('renderer', 'html');
 
-                  context.callMethod('changeWebRendererTo', ['html']);
-
-                  html.window.location.reload();
+                  window.location.reload();
                 },
                 child: Text('HTML'),
               ),
@@ -84,9 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   prefs.setString('renderer', 'canvaskit');
 
-                  context.callMethod('changeWebRendererTo', ['canvaskit']);
-
-                  html.window.location.reload();
+                  window.location.reload();
                 },
                 child: Text('SKIA'),
               ),
